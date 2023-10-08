@@ -68,5 +68,37 @@ exports[`DoorDetail should render correctly 1`] = `
       online
     </p>
   </div>
+  <div
+    class="MuiBox-root css-0"
+  >
+    <p
+      class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+    >
+      <strong>
+        Apartment name
+      </strong>
+    </p>
+    <p
+      class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+    >
+      n/a
+    </p>
+  </div>
+  <div
+    class="MuiBox-root css-0"
+  >
+    <p
+      class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+    >
+      <strong>
+        Last connection status
+      </strong>
+    </p>
+    <p
+      class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+    >
+      Feb 22, 2023, 05:00:11 AM GMT+2
+    </p>
+  </div>
 </div>
 `;

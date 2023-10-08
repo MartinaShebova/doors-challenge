@@ -8,15 +8,16 @@ const door: Door = {
   name: 'Building Main Entrance',
   buildingName: 'Bahnhofstrasse 10A',
   connectionType: 'wired',
-  connectionStatus: 'offline',
+  connectionStatus: 'online',
   lastConnectionStatusUpdate: '2023-02-22T03:00:11.853Z',
   apartmentId: NOT_APPLICABLE_ABBREVIATION,
-  apartmentName: NOT_APPLICABLE_ABBREVIATION
+  apartmentName: NOT_APPLICABLE_ABBREVIATION,
 };
 
 describe('DoorDetail', () => {
   it('should render correctly', () => {
     const { container } = render(<DoorDetail door={door} />);
+
     expect(container.firstChild).toMatchSnapshot();
   });
 });

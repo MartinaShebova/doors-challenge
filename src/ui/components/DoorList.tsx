@@ -33,9 +33,11 @@ const columns: GridColDef<Door>[] = [
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     renderCell: ({ row: door }) => {
       return (
-        <Typography sx={{
-          color: connectionStatusColor(door.connectionStatus),
-        }}>
+        <Typography
+          sx={{
+            color: connectionStatusColor(door.connectionStatus),
+          }}
+        >
           {door.connectionStatus}
         </Typography>
       );

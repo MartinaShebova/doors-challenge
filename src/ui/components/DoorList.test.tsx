@@ -1,6 +1,7 @@
 import { render } from '@testing-library/react';
 import { Door } from '@/models/Door';
 import { DoorList } from './DoorList';
+import { NOT_APPLICABLE_ABBREVIATION } from '@/utils/constants';
 
 jest.mock('next/router', () => require('next-router-mock'));
 
@@ -12,6 +13,8 @@ const doors: Door[] = [
     connectionType: 'wired',
     connectionStatus: 'offline',
     lastConnectionStatusUpdate: '2023-02-22T03:00:11.853Z',
+    apartmentId: NOT_APPLICABLE_ABBREVIATION,
+    apartmentName: NOT_APPLICABLE_ABBREVIATION,
   },
 ];
 

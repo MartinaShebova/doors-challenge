@@ -22,11 +22,7 @@ export function DoorDetail({ door }: DoorDetailProps) {
         <Typography>{door.connectionType}</Typography>
       </DetailPageItem>
       <DetailPageItem label="Connection status">
-        <Typography
-          color={`${
-            connectionStatusColor(door.connectionStatus)
-          }`}
-        >
+        <Typography color={`${connectionStatusColor(door.connectionStatus)}`}>
           {door.connectionStatus}
         </Typography>
       </DetailPageItem>
