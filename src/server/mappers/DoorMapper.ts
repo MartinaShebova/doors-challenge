@@ -8,10 +8,10 @@ import { NOT_APPLICABLE_ABBREVIATION } from '../constants';
 
 @injectable()
 export class DoorMapper implements EntityMapper<Door, DoorDto> {
-  public toDomain(doorDto: DoorDto, allData: {buildingDtosById: BuildingDtosById, apartmentDtosById?: ApartmentDtosById}): Door {
+  public toDomain(doorDto: DoorDto, allData: {buildingDtosById?: BuildingDtosById, apartmentDtosById?: ApartmentDtosById}): Door {
     const buildingName = this.getBuildingName(
-      allData.buildingDtosById,
       doorDto.building_id,
+      allData.buildingDtosById
     );
 
     const apartmentName = this.getApartmentName(
@@ -35,8 +35,8 @@ export class DoorMapper implements EntityMapper<Door, DoorDto> {
     return id && apartmentDtosById ? apartmentDtosById[id].name : NOT_APPLICABLE_ABBREVIATION;
   }
 
-  private getBuildingName(buildingDtos: BuildingDtosById, id: string) {
-    const building = buildingDtos[id];
+  private getBuildingName(id: string, buildingDtos?: BuildingDtosById) {
+    const building = buildingDtos ? buildingDtos[id] : undefined;
 
     return building ? `${building.street} ${building.street_no}` : NOT_APPLICABLE_ABBREVIATION;
   }

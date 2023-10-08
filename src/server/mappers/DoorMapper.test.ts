@@ -3,6 +3,7 @@ import { DoorDto } from '@/__mocks__/dtos/DoorDto';
 import { Door } from '@/models/Door';
 import { DoorMapper } from './DoorMapper';
 import { NOT_APPLICABLE_ABBREVIATION } from '../constants';
+import { BuildingDtosById } from '@/__mocks__/dtos/BuildingDtoById';
 
 const buildingDto: BuildingDto = {
   id: '63f4e0797e85310fee059022',
@@ -23,14 +24,20 @@ const doorDto: DoorDto = {
 
 describe('DoorMapper', () => {
   let doorMapper: DoorMapper;
+  let buildingDtosById: BuildingDtosById;
 
   beforeEach(() => {
     doorMapper = new DoorMapper();
+
+    buildingDtosById = {
+      [buildingDto.id]: buildingDto
+    }
   });
 
   it('should map dto to Door model', () => {
+
     const door = doorMapper.toDomain(doorDto, {
-      [buildingDto.id]: buildingDto,
+      buildingDtosById
     });
 
     expect(door).toMatchObject<Door>({
