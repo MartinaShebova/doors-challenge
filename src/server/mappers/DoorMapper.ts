@@ -4,7 +4,7 @@ import { EntityMapper } from '@/server/lib/EntityMapper';
 import { DoorDto } from '@/__mocks__/dtos/DoorDto';
 import { BuildingDtosById } from '@/__mocks__/dtos/BuildingDtoById';
 import { ApartmentDtosById } from '@/__mocks__/dtos/ApartmentDtosById';
-import { NOT_APPLICABLE_ABBREVIATION } from '../constants';
+import { NOT_APPLICABLE_ABBREVIATION } from '../../utils/constants';
 
 @injectable()
 export class DoorMapper implements EntityMapper<Door, DoorDto> {

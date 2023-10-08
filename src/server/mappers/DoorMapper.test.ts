@@ -2,7 +2,7 @@ import { BuildingDto } from '@/__mocks__/dtos/BuildingDto';
 import { DoorDto } from '@/__mocks__/dtos/DoorDto';
 import { Door } from '@/models/Door';
 import { DoorMapper } from './DoorMapper';
-import { NOT_APPLICABLE_ABBREVIATION } from '../constants';
+import { NOT_APPLICABLE_ABBREVIATION } from '../../utils/constants';
 import { BuildingDtosById } from '@/__mocks__/dtos/BuildingDtoById';
 
 const buildingDto: BuildingDto = {
