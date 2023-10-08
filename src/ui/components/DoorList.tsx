@@ -33,6 +33,11 @@ const columns: GridColDef<Door>[] = [
       return <Typography color="success.main">online</Typography>;
     },
   },
+  {
+    field: 'apartmentName',
+    headerName: 'Apartment name',
+    flex: 1,
+  },
 ];
 
 export function DoorList({ doors }: DoorListProps) {
