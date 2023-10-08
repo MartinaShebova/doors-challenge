@@ -4,6 +4,7 @@ import { Door } from '@/models/Door';
 import { DataGrid, GridColDef, GridRowParams } from '@mui/x-data-grid';
 import Typography from '@mui/material/Typography';
 import formatTimestamp from './utils/formatTimestamp';
+import connectionStatusColor from './utils/connectionStatusColor';
 
 interface DoorListProps {
   doors: Door[];
@@ -31,11 +32,10 @@ const columns: GridColDef<Door>[] = [
     flex: 1,
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     renderCell: ({ row: door }) => {
-      const connectionStatusColor = {
-        color: door.connectionStatus === 'online' ? 'success.main' : 'red',
-      };
       return (
-        <Typography sx={connectionStatusColor}>
+        <Typography sx={{
+          color: connectionStatusColor(door.connectionStatus),
+        }}>
           {door.connectionStatus}
         </Typography>
       );

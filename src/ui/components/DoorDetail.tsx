@@ -3,6 +3,7 @@ import { Door } from '@/models/Door';
 import { DetailPageContainer } from '@/ui/layout/DetailPageContainer';
 import { DetailPageItem } from '@/ui/layout/DetailPageItem';
 import formatTimestamp from './utils/formatTimestamp';
+import connectionStatusColor from './utils/connectionStatusColor';
 
 interface DoorDetailProps {
   door: Door;
@@ -23,7 +24,7 @@ export function DoorDetail({ door }: DoorDetailProps) {
       <DetailPageItem label="Connection status">
         <Typography
           color={`${
-            door.connectionStatus === 'online' ? 'success.main' : 'red'
+            connectionStatusColor(door.connectionStatus)
           }`}
         >
           {door.connectionStatus}
