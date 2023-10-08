@@ -4,6 +4,7 @@ import { EntityMapper } from '@/server/lib/EntityMapper';
 import { DoorDto } from '@/__mocks__/dtos/DoorDto';
 import { BuildingDtosById } from '@/__mocks__/dtos/BuildingDtoById';
 import { ApartmentDtosById } from '@/__mocks__/dtos/ApartmentDtosById';
+import { NOT_APPLICABLE_ABBREVIATION } from '../constants';
 
 @injectable()
 export class DoorMapper implements EntityMapper<Door, DoorDto> {
@@ -31,12 +32,12 @@ export class DoorMapper implements EntityMapper<Door, DoorDto> {
   }
 
   private getApartmentName(apartmentDtosById: ApartmentDtosById | undefined, id?: string) : string{
-    return id && apartmentDtosById ? apartmentDtosById[id].name : 'n/a';
+    return id && apartmentDtosById ? apartmentDtosById[id].name : NOT_APPLICABLE_ABBREVIATION;
   }
 
   private getBuildingName(buildingDtos: BuildingDtosById, id: string) {
     const building = buildingDtos[id];
 
-    return building ? `${building.street} ${building.street_no}` : 'n/a';
+    return building ? `${building.street} ${building.street_no}` : NOT_APPLICABLE_ABBREVIATION;
   }
 }

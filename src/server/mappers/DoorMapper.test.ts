@@ -2,6 +2,7 @@ import { BuildingDto } from '@/__mocks__/dtos/BuildingDto';
 import { DoorDto } from '@/__mocks__/dtos/DoorDto';
 import { Door } from '@/models/Door';
 import { DoorMapper } from './DoorMapper';
+import { NOT_APPLICABLE_ABBREVIATION } from '../constants';
 
 const buildingDto: BuildingDto = {
   id: '63f4e0797e85310fee059022',
@@ -48,7 +49,7 @@ describe('DoorMapper', () => {
     expect(door).toMatchObject<Door>({
       id: doorDto.id,
       name: doorDto.name,
-      buildingName: 'n/a',
+      buildingName: NOT_APPLICABLE_ABBREVIATION,
       connectionType: doorDto.connection_type,
       connectionStatus: doorDto.connection_status,
       lastConnectionStatusUpdate: doorDto.last_connection_status_update,
