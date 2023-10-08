@@ -2,6 +2,7 @@ import Typography from '@mui/material/Typography';
 import { Door } from '@/models/Door';
 import { DetailPageContainer } from '@/ui/layout/DetailPageContainer';
 import { DetailPageItem } from '@/ui/layout/DetailPageItem';
+import formatTimestamp from './utils/formatTimestamp';
 
 interface DoorDetailProps {
   door: Door;
@@ -20,12 +21,21 @@ export function DoorDetail({ door }: DoorDetailProps) {
         <Typography>{door.connectionType}</Typography>
       </DetailPageItem>
       <DetailPageItem label="Connection status">
-        <Typography color={`${door.connectionStatus === "online" ? "success.main" : "red"}`}>
+        <Typography
+          color={`${
+            door.connectionStatus === 'online' ? 'success.main' : 'red'
+          }`}
+        >
           {door.connectionStatus}
         </Typography>
       </DetailPageItem>
       <DetailPageItem label="Apartment name">
         <Typography>{door.apartmentName}</Typography>
+      </DetailPageItem>
+      <DetailPageItem label="Last connection status">
+        <Typography>
+          {formatTimestamp(door.lastConnectionStatusUpdate)}
+        </Typography>
       </DetailPageItem>
     </DetailPageContainer>
   );

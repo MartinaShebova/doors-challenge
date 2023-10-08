@@ -3,6 +3,7 @@ import { useCallback } from 'react';
 import { Door } from '@/models/Door';
 import { DataGrid, GridColDef, GridRowParams } from '@mui/x-data-grid';
 import Typography from '@mui/material/Typography';
+import formatTimestamp from './utils/formatTimestamp';
 
 interface DoorListProps {
   doors: Door[];
@@ -31,15 +32,27 @@ const columns: GridColDef<Door>[] = [
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     renderCell: ({ row: door }) => {
       const connectionStatusColor = {
-        color: door.connectionStatus === "online" ? "success.main" : "red"
-      }
-      return <Typography sx={connectionStatusColor}>{door.connectionStatus}</Typography>;
+        color: door.connectionStatus === 'online' ? 'success.main' : 'red',
+      };
+      return (
+        <Typography sx={connectionStatusColor}>
+          {door.connectionStatus}
+        </Typography>
+      );
     },
   },
   {
     field: 'apartmentName',
     headerName: 'Apartment name',
     flex: 1,
+  },
+  {
+    field: 'lastConnectionStatusUpdate',
+    headerName: 'Last connection status',
+    flex: 1,
+    renderCell: ({ row: door }) => {
+      return formatTimestamp(door.lastConnectionStatusUpdate);
+    },
   },
 ];
 
