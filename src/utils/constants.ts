@@ -1,1 +1,1 @@
-export const NOT_APPLICABLE_ABBREVIATION = "n/a";
+export const NOT_APPLICABLE_ABBREVIATION = 'n/a';

@@ -41,21 +41,26 @@ export class GetDoorByIdUseCase implements UseCase<Door, Context> {
     }
 
     let apartmentDto: ApartmentDto | undefined = undefined;
-    
-    if(doorDto.apartment_id){
-      apartmentDto = await this.apartmentRepository.getApartmentById(doorDto.apartment_id);
+
+    if (doorDto.apartment_id) {
+      apartmentDto = await this.apartmentRepository.getApartmentById(
+        doorDto.apartment_id,
+      );
     }
 
     let apartmentDtosById: ApartmentDtosById | undefined = undefined;
 
-    if(apartmentDto){
-      apartmentDtosById = {[apartmentDto.id]: apartmentDto}
+    if (apartmentDto) {
+      apartmentDtosById = { [apartmentDto.id]: apartmentDto };
     }
 
     const buildingDtosById: BuildingDtosById = {
-      [buildingDto.id]: buildingDto
-    }
+      [buildingDto.id]: buildingDto,
+    };
 
-    return this.doorMapper.toDomain(doorDto, {buildingDtosById, apartmentDtosById});
+    return this.doorMapper.toDomain(doorDto, {
+      buildingDtosById,
+      apartmentDtosById,
+    });
   }
 }

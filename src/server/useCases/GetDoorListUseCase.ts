@@ -22,14 +22,17 @@ export class GetDoorListUseCase implements UseCase<Door[]> {
       const [doorDtos, buildingDtos, apartmentDtos] = await Promise.all([
         this.doorRepository.getAllDoors(),
         this.buildingRepository.getAllBuildings(),
-        this.apartmentRepository.getAllApartments()
+        this.apartmentRepository.getAllApartments(),
       ]);
 
       const buildingDtosById = keyBy(buildingDtos, 'id');
       const apartmentDtosById = keyBy(apartmentDtos, 'id');
 
       return doorDtos.map((doorDto) =>
-        this.doorMapper.toDomain(doorDto, {buildingDtosById, apartmentDtosById}),
+        this.doorMapper.toDomain(doorDto, {
+          buildingDtosById,
+          apartmentDtosById,
+        }),
       );
     } catch (error) {
       throw new createHttpError.ServiceUnavailable();

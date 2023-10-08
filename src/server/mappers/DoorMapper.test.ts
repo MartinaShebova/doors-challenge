@@ -30,14 +30,13 @@ describe('DoorMapper', () => {
     doorMapper = new DoorMapper();
 
     buildingDtosById = {
-      [buildingDto.id]: buildingDto
-    }
+      [buildingDto.id]: buildingDto,
+    };
   });
 
   it('should map dto to Door model', () => {
-
     const door = doorMapper.toDomain(doorDto, {
-      buildingDtosById
+      buildingDtosById,
     });
 
     expect(door).toMatchObject<Door>({
