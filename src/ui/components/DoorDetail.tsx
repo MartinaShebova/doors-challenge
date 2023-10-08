@@ -22,6 +22,9 @@ export function DoorDetail({ door }: DoorDetailProps) {
       <DetailPageItem label="Connection status">
         <Typography color="success.main">online</Typography>
       </DetailPageItem>
+      <DetailPageItem label="Apartment name">
+        <Typography>{door.apartmentName}</Typography>
+      </DetailPageItem>
     </DetailPageContainer>
   );
 }
