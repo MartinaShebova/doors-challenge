@@ -20,7 +20,9 @@ export function DoorDetail({ door }: DoorDetailProps) {
         <Typography>{door.connectionType}</Typography>
       </DetailPageItem>
       <DetailPageItem label="Connection status">
-        <Typography color="success.main">online</Typography>
+        <Typography color={`${door.connectionStatus === "online" ? "success.main" : "red"}`}>
+          {door.connectionStatus}
+        </Typography>
       </DetailPageItem>
       <DetailPageItem label="Apartment name">
         <Typography>{door.apartmentName}</Typography>
