@@ -1,6 +1,6 @@
 import { container } from 'tsyringe';
 import { HttpError } from 'http-errors';
-import { BuildingDto } from '@/__mocks__/dtos/BuidlingDto';
+import { BuildingDto } from '@/__mocks__/dtos/BuildingDto';
 import { DoorDto } from '@/__mocks__/dtos/DoorDto';
 import { DoorRepository } from '@/server/repositories/DoorRepository';
 import { BuildingRepository } from '@/server/repositories/BuildingRepository';

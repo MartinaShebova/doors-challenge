@@ -1,4 +1,4 @@
-import { BuildingDto } from './dtos/BuidlingDto';
+import { BuildingDto } from './dtos/BuildingDto';
 
 export const buildings: BuildingDto[] = [
   {

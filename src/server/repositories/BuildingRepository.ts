@@ -1,5 +1,5 @@
 import { injectable } from 'tsyringe';
-import { BuildingDto } from '@/__mocks__/dtos/BuidlingDto';
+import { BuildingDto } from '@/__mocks__/dtos/BuildingDto';
 import { buildings } from '@/__mocks__/buildings';
 
 @injectable()

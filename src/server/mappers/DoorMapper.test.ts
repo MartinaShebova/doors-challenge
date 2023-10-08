@@ -1,4 +1,4 @@
-import { BuildingDto } from '@/__mocks__/dtos/BuidlingDto';
+import { BuildingDto } from '@/__mocks__/dtos/BuildingDto';
 import { DoorDto } from '@/__mocks__/dtos/DoorDto';
 import { Door } from '@/models/Door';
 import { DoorMapper } from './DoorMapper';
