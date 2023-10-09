@@ -17,6 +17,13 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ## Tests
 
 The project is covered by unit tests using [Jest](https://jestjs.io/) and [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/).
+
+NOTE: To update the Jest snapshot artifacts, located in src/ui/components/__snapshots__, execute:
+
+```bash
+npm run test -- -u
+```
+
 To run the tests in watch mode, execute:
 
 ```bash
